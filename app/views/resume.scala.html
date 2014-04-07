@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>{{name}}</title>
+        <link rel="stylesheet" href="@routes.Assets.at("stylesheets/resume.css")">
+        <link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/combo?pure/0.3.0/base-min.css&amp;pure/0.3.0/grids-min.css" media="screen" />
+        <link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/combo?pure/0.3.0/base-min.css&amp;pure/0.3.0/grids-nr-min.css" media="print" />
+
+        <link rel="stylesheet" type="text/css" href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" />
+    </head>
+    <body>
+        <div id="page">
+
+            <div class="pure-g pure-g-r">
+
+                <div class="pure-u-7-12">
+                    <header>
+                        <h1>{{name}}</h1>
+                        <span class="title">{{title}}</span>
+                    </header>
+                </div>
+
+                <div class="pure-u-5-12">
+                    <address>
+                        <ul class="fa-ul">
+                            <li>
+                                <i class="fa-li fa fa-home"></i>
+                                {{#with address}}
+                                <span>{{street}}</span> &middot; <span>{{city}}, {{state.code}} {{zipCode}}</span>
+                                {{/with}}
+                            </li>
+
+                            <li><a href="{{url}}"><i class="fa-li fa fa-globe"></i> <em>{{url}}</em></a></li>
+
+                            <li><a href="mailto:{{emailAddress}}"><i class="fa-li fa fa-envelope"></i> <em>{{emailAddress}}</em></a></li>
+
+                            {{#each phoneNumbers}}
+                            <li><i class="fa-li fa fa-phone"></i> ({{areaCode}}) {{exchange}}-{{suffix}}</li>
+                            {{/each}}
+
+                        </ul>
+                    </address>
+                </div>
+
+            </div>
+
+            <section class="pure-g pure-g-r">
+                <h2 class="pure-u-1">Employment</h2>
+
+                <ol class="pure-u-1 section-list">
+				{{#each employment}}
+                    <li>
+                        <div class="pure-g pure-g-r">
+                            <div class="pure-u-3-4">
+                                <h3>{{employer}}</h3>
+                                <span class="title">{{title}}</span>
+                            </div>
+                            <div class="pure-u-1-4">
+                                <div class="time-period">{{start}} - {{end}}</div>
+                                <div class="location">{{#with location}}{{city}}, {{state}}{{/with}}</div>
+                            </div>
+                        </div>
+                        <div class="pure-g pure-g-r">
+                            <ul class="pure-u-1">
+								{{#each accomplishments}}
+                                <li>{{.}}</li>
+                                {{/each}}
+                            </ul>
+                        </div>
+                    </li>
+
+                    {{/each}}
+                </ol>
+            </section>
+
+            <section class="pure-g pure-g-r education section">
+                <h2 class="pure-u-1">Education</h2>
+
+                <ol class="pure-u-1 section-list">
+				{{#each education}}
+                    <li>
+                        <div class="pure-g pure-g-r">
+                            <div class="pure-u-3-4">
+                                <h3>{{institution}}</h3>
+                                <span class="degree">{{degree}}</span>
+                            </div>
+                            <div class="pure-u-1-4">
+                                <div class="time-period">{{start}} - {{end}}</div>
+                                <div class="location">{{#with location}}{{city}}, {{state}}{{/with}}</div>
+                            </div>
+                        </div>
+                        <div class="pure-g pure-g-r">
+                            <p class="pure-u-1">{{description}}</p>
+                        </div>
+                    </li>
+                    {{/each}}
+                </ol>
+            </section>
+
+            <section class="pure-g pure-g-r skills-section">
+                <h2 class="pure-u-1">Skills</h2>
+
+                <ol class="pure-u-1 section-list">
+				{{#each skills}}
+                    <li>
+                        <h3>{{name}}</h3>
+                        <p>{{description}}</p>
+                    </li>
+                    {{/each}}
+                </ol>
+            </section>
+
+        </div>
+
+    </body>
+</html>

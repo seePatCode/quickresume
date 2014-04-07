@@ -1,0 +1,158 @@
+/** https://github.com/blicksky/resume2/blob/master/src/styles.less **/
+@highlightColor: #4183C4;
+@backgroundColor: #F0F0F0;
+@pageColor: #FDFAF9;
+@textColor: #333333;
+@lightTextColor: #999999;
+
+body,
+.pure-g [class *= "pure-u"],
+.pure-g-r [class *= "pure-u"] {
+  /*font-family: 'Open Sans', sans-serif;*/
+}
+
+body {
+  padding: 10px;
+  background-color: @backgroundColor;
+  color: @textColor;
+}
+
+#page {
+  max-width: 800px;
+  min-height: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  box-shadow: 0px 2px 5px 0px #888888;
+  transition: box-shadow 0.3s;
+  background-color: @pageColor;
+
+  &:hover {
+    box-shadow: 0px 2px 15px 0px #888888;
+  }
+}
+
+header {
+  display: inline-block;
+
+  .title {
+    font-style: italic;
+    color: @lightTextColor;
+    position: relative;
+    top: -10px;
+  }
+
+  * {
+    display: block;
+    text-align: right;
+    white-space: nowrap;
+  }
+}
+
+h1 {
+  color: @highlightColor;
+  font-size: 3em;
+  font-weight: normal;
+  margin: 0;
+}
+
+address {
+  font-style: normal;
+}
+
+address {
+  ul {
+    margin-top: 5px;
+    margin-bottom: 5px;
+  }
+
+  span {
+    white-space: nowrap;
+  }
+
+  a {
+    color: @textColor;
+    text-decoration: none;
+
+    em {
+      font-style: normal;
+      position: relative;
+      left: -30px;
+      border-radius: 4px;
+      padding: 1px 4px 1px 30px;
+      transition: color 0.3s;
+      transition: background-color 0.3s;
+    }
+
+    &:hover em {
+      background-color: @highlightColor;
+      color: @pageColor;
+    }
+  }
+
+  i.fa {
+    color: @lightTextColor;
+    z-index: 1;
+    transition: color 0.3s;
+  }
+
+  a:hover i.fa {
+    color: @pageColor;
+  }
+}
+
+h2 {
+  background-color: @highlightColor;
+  color: @pageColor;
+  font-size: 1em;
+  padding: 0.1em 1em;
+}
+
+section > ol {
+  margin: 0;
+}
+
+.section-list {
+  list-style: none;
+  padding: 0;
+
+  li {
+    margin-bottom: 0;
+
+    h3 {
+      margin: 0;
+    }
+
+    .time-period,
+    .location {
+      text-align: right;
+      color: @lightTextColor;
+    }
+
+    .location {
+      font-size: 0.8em;
+    }
+
+    .title,
+    .degree {
+      font-style: italic;
+      color: @lightTextColor;
+    }
+
+    ul {
+      list-style-type: none;
+      padding-left: 1em;
+
+      li {
+        margin-bottom: 1em;
+      }
+    }
+  }
+}
+
+section {
+
+  p {
+    margin: 0.5em 0 0.5em 1em;
+  }
+}
+/**https://github.com/blicksky/resume2/blob/master/src/styles-print.less not included...**/
