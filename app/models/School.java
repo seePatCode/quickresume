@@ -11,5 +11,17 @@ public class School {
     public String start;
     public String end;
     public String degree;
+
     public List<String> accomplishments;
+
+    public School(){}
+
+    public School(String institution, Address location, String start, String end, String degree, List<String> accomplishments) {
+        this.institution = institution;
+        this.location = location;
+        this.start = start;
+        this.end = end;
+        this.degree = degree;
+        this.accomplishments = accomplishments;
+    }
 }

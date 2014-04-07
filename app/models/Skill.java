@@ -6,4 +6,12 @@ package models;
 public class Skill {
     public String name;
     public String description;
+
+    public Skill(){}
+
+    public Skill(String name, String description) {
+        this.name = name;
+        this.description = description;
+    }
+
 }

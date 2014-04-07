@@ -11,5 +11,17 @@ public class Job {
     public String start;
     public String end;
     public String title;
+
     public List<String> accomplishments;
+
+    public Job(){}
+
+    public Job(String employer, Address location, String start, String end, String title, List<String> accomplishments) {
+        this.employer = employer;
+        this.location = location;
+        this.start = start;
+        this.end = end;
+        this.title = title;
+        this.accomplishments = accomplishments;
+    }
 }

@@ -10,6 +10,13 @@ import java.util.Map;
 public class State {
     public String code;
     public String name;
+
+    public State(){}
+
+    public State(String code) {
+        this.code = code;
+    }
+
     public String getName()
     {
         if(name!=null)
@@ -17,6 +24,7 @@ public class State {
         if(code==null)
             return null;
         return getStates().get(code);
+
     }
     private static Map<String, String> states;
     private static Map<String, String> getStates()
