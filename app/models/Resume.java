@@ -27,7 +27,23 @@ public class Resume {
     public List<School> education;
     public List<Skill> skills;
     
-    public Resume() {}
+    public Resume()
+    {
+        address=new Address();
+        employment=new ArrayList<Job>();
+        education = new ArrayList<School>();
+        skills = new ArrayList<Skill>();
+    }
+    public Resume(boolean initializeForJSON)
+    {
+        this();
+        if(!initializeForJSON) {
+            return;
+        }
+        employment.add(new Job(initializeForJSON));
+        education.add(new School(initializeForJSON));
+        skills.add(new Skill(initializeForJSON));
+    }
 
     public Resume(String name, String title, Address address, String website, String email, String phone, List<Job> employment, List<School> education, List<Skill> skills) {
         this.name = name;

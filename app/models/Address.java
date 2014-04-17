@@ -9,7 +9,9 @@ public class Address {
     public State state;
     public String zipcode;
 
-    public Address() { }
+    public Address() {
+        state=new State();
+    }
 
     public Address(String street, String city, State state, String zipcode)
     {

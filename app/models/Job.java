@@ -1,5 +1,6 @@
 package models;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -14,7 +15,18 @@ public class Job {
 
     public List<String> accomplishments;
 
-    public Job(){}
+    public Job(){
+        accomplishments=new ArrayList<String>();
+    }
+
+    public Job(boolean initializeForJSON) {
+        this();
+        if(!initializeForJSON) {
+            return;
+        }
+        location = new Address();
+        accomplishments.add(new String());
+    }
 
     public Job(String employer, Address location, String start, String end, String title, List<String> accomplishments) {
         this.employer = employer;
@@ -24,4 +36,5 @@ public class Job {
         this.title = title;
         this.accomplishments = accomplishments;
     }
+
 }

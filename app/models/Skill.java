@@ -9,9 +9,13 @@ public class Skill {
 
     public Skill(){}
 
+    public Skill(boolean initializeForJSON) {
+        this();
+    }
+
     public Skill(String name, String description) {
+        this();
         this.name = name;
         this.description = description;
     }
-
 }
